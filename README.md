@@ -20,7 +20,7 @@ This plugin exposes three powerful tools through the MCP interface:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/grok-mcp.git
+   git clone https://github.com/Bob-lance/grok-mcp.git
    cd grok-mcp
    ```
 

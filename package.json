@@ -23,6 +23,14 @@
   ],
   "author": "Braden Olmstead",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bob-lance/grok-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bob-lance/grok-mcp/issues"
+  },
+  "homepage": "https://github.com/Bob-lance/grok-mcp#readme",
   "engines": {
     "node": ">=16.0.0"
   },
