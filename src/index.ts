@@ -86,7 +86,7 @@ class GrokMcpServer {
               model: {
                 type: 'string',
                 description: 'Grok model to use (e.g., grok-2-latest, grok-3, grok-3-reasoner, grok-3-deepsearch, grok-3-mini-beta)',
-                default: 'grok-2-latest'
+                default: 'grok-3-mini-beta'
               },
               temperature: {
                 type: 'number',
@@ -176,7 +176,7 @@ class GrokMcpServer {
               model: {
                 type: 'string',
                 description: 'Grok model to use (e.g., grok-2-latest, grok-3, grok-3-reasoner, grok-3-deepsearch, grok-3-mini-beta)',
-                default: 'grok-2-latest'
+                default: 'grok-3-mini-beta'
               }
             },
             required: ['messages', 'tools']

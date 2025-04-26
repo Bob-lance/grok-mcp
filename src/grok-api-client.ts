@@ -65,7 +65,7 @@ export class GrokApiClient {
       
       const requestBody = {
         messages,
-        model: options.model || 'grok-2-latest',
+        model: options.model || 'grok-3-mini-beta',
         ...options
       };
       
@@ -114,7 +114,7 @@ export class GrokApiClient {
       
       const requestBody = {
         messages,
-        model: options.model || 'grok-2-latest',
+        model: options.model || 'grok-3-mini-beta',
         tools,
         tool_choice: options.tool_choice || 'auto',
         ...options
