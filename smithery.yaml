@@ -1,0 +1,27 @@
+\
+startCommand:
+  type: stdio
+  # Define any runtime configuration options your server needs here.
+  # For example, if it needs an API key passed via environment variables.
+  configSchema:
+    type: object
+    properties: {} # Add properties if your server needs config, e.g., API keys
+    # Example for API key:
+    # required:
+    #  - xaiApiKey
+    # properties:
+    #  xaiApiKey:
+    #    type: string
+    #    description: "Your Grok AI API Key (XAI_API_KEY)"
+
+  # This function tells Smithery how to start your built application.
+  commandFunction: |
+    (config) => ({
+      command: 'node', // The command to run
+      args: ['build/index.js'], // Arguments, matching your package.json start script output
+      env: {
+        // Map config properties to environment variables if needed
+        // Example:
+        // XAI_API_KEY: config.xaiApiKey
+      }
+    }) 
