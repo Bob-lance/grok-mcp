@@ -17,7 +17,7 @@ RUN npm ci --omit=dev
 COPY . .
 
 # Build the TypeScript code
-RUN npm run build
+# RUN npm run build
 
 # Make port 3000 available to the world outside this container
 # Change this if your app uses a different port
