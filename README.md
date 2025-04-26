@@ -1,5 +1,9 @@
 # Grok MCP Plugin
 
+<!-- Add badges here -->
+[![npm version](https://img.shields.io/npm/v/grok-mcp.svg?style=flat-square)](https://www.npmjs.com/package/grok-mcp) <!-- Replace with your actual package name if different -->
+[![Smithery Build Status](https://api.smithery.ai/badges/github.com/Bob-lance/grok-mcp/build-status.svg)](https://smithery.ai/Bob-lance/grok-mcp) <!-- Replace with your actual repo path -->
+
 A Model Context Protocol (MCP) plugin that provides seamless access to Grok AI's powerful capabilities directly from Cline.
 
 ## Features
