@@ -16,8 +16,14 @@ RUN npm ci --omit=dev
 # Copy the rest of the application source code
 COPY . .
 
+# Increase memory limit for the build process
+ENV NODE_OPTIONS=--max-old-space-size=4096
+
 # Build the TypeScript code
 RUN npm run build
+
+# Reset NODE_OPTIONS if not needed for runtime
+# ENV NODE_OPTIONS=
 
 # Make port 3000 available to the world outside this container
 # Change this if your app uses a different port
