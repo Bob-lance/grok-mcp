@@ -1,5 +1,7 @@
 # Grok MCP Plugin
 
+[![smithery badge](https://smithery.ai/badge/@Bob-lance/grok-mcp)](https://smithery.ai/server/@Bob-lance/grok-mcp)
+
 A Model Context Protocol (MCP) plugin that provides seamless access to Grok AI's powerful capabilities directly from Cline.
 
 ## Features
@@ -17,6 +19,14 @@ This plugin exposes three powerful tools through the MCP interface:
 - Cline with MCP support
 
 ## Installation
+
+### Installing via Smithery
+
+To install Grok MCP Plugin for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@Bob-lance/grok-mcp):
+
+```bash
+npx -y @smithery/cli install @Bob-lance/grok-mcp --client claude
+```
 
 1. Clone this repository:
    ```bash
