@@ -1,36 +1,47 @@
-# Use an official Node.js runtime as a parent image
-# Using Alpine Linux for a smaller image size
-FROM node:18-alpine
+# Stage 1: Build the application
+FROM node:18-alpine AS builder
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /app
 
-# Copy package.json and package-lock.json (or npm-shrinkwrap.json)
-# Use --link to optimize caching if available
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies using npm ci for clean installs
-# Use --omit=dev to skip installing devDependencies in the final image
-RUN npm ci --omit=dev
+# Install all dependencies (including devDependencies)
+RUN npm ci
 
 # Copy the rest of the application source code
 COPY . .
 
-# Increase memory limit for the build process
+# Increase memory limit for the build process (optional, keep if needed)
 ENV NODE_OPTIONS=--max-old-space-size=4096
 
 # Build the TypeScript code
 RUN npm run build
 
-# Reset NODE_OPTIONS if not needed for runtime
-# ENV NODE_OPTIONS=
+# Optional: Prune devDependencies if you want to copy node_modules later
+# RUN npm prune --production
 
-# Make port 3000 available to the world outside this container
-# Change this if your app uses a different port
+# Stage 2: Create the final production image
+FROM node:18-alpine
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json from the builder stage
+COPY --from=builder /app/package*.json ./
+
+# Install ONLY production dependencies
+RUN npm ci --omit=dev
+
+# Copy the compiled code from the builder stage
+COPY --from=builder /app/build ./build
+
+# Make port 3000 available
 EXPOSE 3000
 
-# Define environment variables if needed
-# ENV NODE_ENV production
+# Define environment variables if needed (e.g., for runtime)
+# ENV NODE_ENV=production
 
-# Run the app when the container launches
+# Run the app
 CMD [ "npm", "start" ] 
