@@ -85,7 +85,7 @@ class GrokMcpServer {
               },
               model: {
                 type: 'string',
-                description: 'Grok model to use (defaults to grok-2-latest)',
+                description: 'Grok model to use (e.g., grok-2-latest, grok-3, grok-3-reasoner, grok-3-deepsearch, grok-3-mini-beta)',
                 default: 'grok-2-latest'
               },
               temperature: {
@@ -106,7 +106,7 @@ class GrokMcpServer {
         },
         {
           name: 'image_understanding',
-          description: 'Analyze images using Grok AI vision capabilities',
+          description: 'Analyze images using Grok AI vision capabilities (Note: Grok 3 may support image creation)',
           inputSchema: {
             type: 'object',
             properties: {
@@ -124,7 +124,7 @@ class GrokMcpServer {
               },
               model: {
                 type: 'string',
-                description: 'Grok vision model to use (defaults to grok-2-vision-latest)',
+                description: 'Grok vision model to use (e.g., grok-2-vision-latest, potentially grok-3 variants)',
                 default: 'grok-2-vision-latest'
               }
             },
@@ -175,7 +175,7 @@ class GrokMcpServer {
               },
               model: {
                 type: 'string',
-                description: 'Grok model to use (defaults to grok-2-latest)',
+                description: 'Grok model to use (e.g., grok-2-latest, grok-3, grok-3-reasoner, grok-3-deepsearch, grok-3-mini-beta)',
                 default: 'grok-2-latest'
               }
             },
