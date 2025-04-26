@@ -126,5 +126,3 @@ export class GrokApiClient {
       console.error('[Error] Failed to create function call request:', error);
       throw error;
     }
-  }
-}
