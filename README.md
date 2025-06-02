@@ -180,7 +180,7 @@ Generate a response using Grok AI chat completion.
 **Parameters:**
 
 - `messages` (required): Array of message objects with role and content
-- `model` (optional): Grok model to use (defaults to grok-2-latest)
+- `model` (optional): Grok model to use (defaults to grok-3-mini-beta)
 - `temperature` (optional): Sampling temperature (0-2, defaults to 1)
 - `max_tokens` (optional): Maximum number of tokens to generate (defaults to 16384)
 
@@ -206,7 +206,7 @@ Use Grok AI to call functions based on user input.
 - `messages` (required): Array of message objects with role and content
 - `tools` (required): Array of tool objects with type, function name, description, and parameters
 - `tool_choice` (optional): Tool choice mode (auto, required, none, defaults to auto)
-- `model` (optional): Grok model to use (defaults to grok-2-latest)
+- `model` (optional): Grok model to use (defaults to grok-3-mini-beta)
 
 ## Development
 

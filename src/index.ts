@@ -385,4 +385,11 @@ class GrokMcpServer {
    */
   async run() {
     const transport = new StdioServerTransport();
-    await this.server.connect
+    await this.server.connect(transport);
+    console.error('[Setup] Grok MCP server running on stdio');
+  }
+}
+
+// Create and run the server
+const server = new GrokMcpServer();
+server.run().catch(console.error);
